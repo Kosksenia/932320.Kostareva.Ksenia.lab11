@@ -1,0 +1,77 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1>Calc Service Demonstration</h1>
+    
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5>Manual Calculation</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">First Number:</label>
+                        <input type="number" id="firstNumber" class="form-control" value="@ViewBag.FirstNumber">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Second Number:</label>
+                        <input type="number" id="secondNumber" class="form-control" value="@ViewBag.SecondNumber">
+                    </div>
+                    <button class="btn btn-success w-100" onclick="calculateAll()">Calculate</button>
+                    <button class="btn btn-outline-secondary w-100 mt-2" onclick="generateRandom()">Generate Random Numbers</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h5>Results</h5>
+                </div>
+                <div class="card-body">
+                    <div id="results">
+                        <p><strong>Add:</strong> <span id="addResult">-</span></p>
+                        <p><strong>Sub:</strong> <span id="subResult">-</span></p>
+                        <p><strong>Mult:</strong> <span id="multResult">-</span></p>
+                        <p><strong>Div:</strong> <span id="divResult">-</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <h5>Different Data Passing Methods</h5>
+                </div>
+                <div class="card-body">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action" onclick="showMethod('model')">
+                            Using Model Calc
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action" onclick="showMethod('viewdata')">
+                            Using ViewData Calc
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action" onclick="showMethod('viewbag')">
+                            Using ViewBag Calc
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action" onclick="showMethod('service')">
+                            Using Service Injection Calc
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showMethod(method) {
+        alert('This would demonstrate: ' + method + ' approach');
+    }
+</script>
